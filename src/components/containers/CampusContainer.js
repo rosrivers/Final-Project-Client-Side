@@ -18,13 +18,17 @@ class CampusContainer extends Component {
     // Get campus ID from URL (API link)
     this.props.fetchCampus(this.props.match.params.id);
   }
-
+    handleDelete = async (event) => {
+    await this.props.deleteCampus(this.props.campus.id);
+    this.setState({ redirect: true });
+  }
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     return (
       <div>
         <Header />
-        <CampusView campus={this.props.campus} />
+        <CampusView campus={this.props.campus}
+   handleDelete={this.handleDelete}/>
       </div>
     );
   }
@@ -43,6 +47,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
   };
 };
 
