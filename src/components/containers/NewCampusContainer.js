@@ -12,7 +12,7 @@ import { Redirect } from 'react-router-dom';
 
 import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk } from '../../store/thunks';
-
+import { editCampusThunk } from '../../store/thunks';
 class NewCampusContainer extends Component {
     // Initialize state
     constructor(props) {
