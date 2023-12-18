@@ -8,12 +8,19 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
-  // If there is no campus, display a message.
+// If there is no campus, display a message.
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+      <div>
+        <div>There are no campuses.</div>
+        <Link to={`/newcampus`}>
+          <button>Add New Campus</button>
+        </Link>
+      </div>
+    )
   }
 
-  // If there is at least one campus, render All Campuses view 
+    // If there is at least one campus, render All Campuses view 
   return (
     <div>
       <h1>All Campuses</h1>
@@ -23,22 +30,23 @@ const AllCampusesView = (props) => {
           <Link to={`/campus/${campus.id}`}>
             <h2>{campus.name}</h2>
           </Link>
+          <img src={campus.imageUrl} alt={campus.name} style={{ width: '500px', height: '300px' }} />
           <h4>campus id: {campus.id}</h4>
          <img src = {campus.imageUrl}></img>
           <p>{campus.address}</p>
           <p>{campus.description}</p>
           <button onClick={() => props.deleteCampus(campus.id)}>Delete</button>
           <Link to={`/editcampus/${campus.id}`}>
-          <button>Edit Campus</button>
+            <button>Edit Campus</button>
           </Link>
-          <hr/>
+          <hr />
         </div>
       ))}
-      <br/>
+      <br />
       <Link to={`/newcampus`}>
         <button>Add New Campus</button>
       </Link>
-      <br/><br/>
+      <br /><br />
     </div>
   );
 };
