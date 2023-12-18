@@ -28,13 +28,13 @@ const stylesSheet = makeStyles(() => ({
 }));
 
 
-const EditCampusView = (props) => {
+const EditStudentView = (props) => {
     const { handleChange, handleSubmit } = props;
     const classes = stylesSheet();
 
     return (
         <div>
-            <h1>Edit Campus</h1>
+            <h1>Edit Student</h1>
             <div className={classes.root}>
                 <div className={classes.container}>
                     <div className={classes.title_container}>
@@ -43,25 +43,18 @@ const EditCampusView = (props) => {
                         </Typography>
                     </div>
                     <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)}>
-
-                    <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Image URL: </label>
-
-                        <input type="text" name="imageURL" onChange={(e) => handleChange(e)} />
+                    <label style={{ color: '#597bb5', fontWeight: 'bold' }}>First Name: </label>
+                        <input type="text" name="firstname" onChange={(e) => handleChange(e)} />
                         <br />
                         <br />
 
-                        <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Name: </label>
-                        <input type="text" name="name" onChange={(e) => handleChange(e)} />
+                        <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Last Name: </label>
+                        <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
                         <br />
                         <br />
 
-                        <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Address: </label>
-                        <input type="text" name="address" onChange={(e) => handleChange(e)} />
-                        <br />
-                        <br />
-
-                        <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Description: </label>
-                        <input type="text" name="description" onChange={(e) => handleChange(e)} />
+                        <label style={{ color: '#597bb5', fontWeight: 'bold' }}>Id: </label>
+                        <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
                         <br />
                         <br />
 
@@ -77,4 +70,4 @@ const EditCampusView = (props) => {
     );
 };
 
-export default EditCampusView;
+export default EditStudentView;
