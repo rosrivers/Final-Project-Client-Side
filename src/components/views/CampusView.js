@@ -13,7 +13,6 @@ const CampusView = (props) => {
   // Render a single Campus view with list of its students
   return (
     <div>
-      <img src={campus.imageUrl} alt={campus.name} style={{ width: '500px', height: '300px' }} />
       <h1>{campus.name}</h1>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
@@ -27,7 +26,7 @@ const CampusView = (props) => {
           </div>
         );
       })}
-        <button onClick={handleDelete}>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
