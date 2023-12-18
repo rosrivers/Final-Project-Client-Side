@@ -38,9 +38,12 @@ class NewStudentContainer extends Component {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
     let student = {
-        firstname: this.state.firstname,
-        lastname: this.state.lastname,
-        campusId: this.state.campusId
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      campusId: this.state.campusId,
+      email: this.state.email,
+      imageUrl: this.state.imageUrl,
+      gpa: this.state.gpa,
     };
     
     // Add new student in back-end database
@@ -48,10 +51,13 @@ class NewStudentContainer extends Component {
 
     // Update state, and trigger redirect to show the new student
     this.setState({
-      firstname: "", 
-      lastname: "", 
-      campusId: null, 
-      redirect: true, 
+      firstname: "",
+      lastname: "",
+      campusId: null,
+      email: "",
+      imageUrl: "",
+      gpa: 0.0,
+      redirect: true,
       redirectId: newStudent.id
     });
   }
