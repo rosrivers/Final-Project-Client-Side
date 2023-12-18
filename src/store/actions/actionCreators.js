@@ -41,14 +41,6 @@ export const editCampus = (campus) => {
   };
 };
 
-//Single Campus
-export const fetchCampus = (campus) => {
-  return {
-    type: at.FETCH_CAMPUS,
-    payload: campus,
-  };
-};
-
 //All Students
 export const fetchAllStudents = (students) => {
   return {
