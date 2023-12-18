@@ -9,19 +9,25 @@ import { Link } from "react-router-dom";
 // Take in props data to construct the component
 const CampusView = (props) => {
   const {campus} = props;
+  if (!campus) {
+    return <p>Loading campus data!</p>;
+  }
   
   // Render a single Campus view with list of its students
   return (
     <div>
       <h1>{campus.name}</h1>
+      <img src={campus.imageUrl}></img>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+
+      <h2>Students</h2>
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
         return (
           <div key={student.id}>
             <Link to={`/student/${student.id}`}>
-              <h2>{name}</h2>
+              <h3>{name}</h3>
             </Link>             
           </div>
         );
